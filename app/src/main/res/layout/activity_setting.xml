@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".config.SettingActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_red"
+        android:theme="@style/MainToolBarTheme"
+        app:popupTheme="@style/MainToolBarTheme"
+        app:titleTextColor="@color/color_white"></android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#e3e3e3"
+        android:id="@+id/ll_myself"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/ll_change_folder"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@mipmap/files"
+                android:layout_marginLeft="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="设置保存目录"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_change_max_num"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="1dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@mipmap/search"
+                android:layout_marginLeft="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="最大搜索数量"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:text="废柴音乐v2.1\nby亦泽"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

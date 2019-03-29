@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/player_background"
+    android:fitsSystemWindows="true"
+    tools:context=".musicplayer.MusicPlayActivity">
+
+
+    <TextView
+        android:id="@+id/tv_song_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/color_white"
+        android:textSize="23dp"
+        android:text="爱情转移"/>
+    <TextView
+        android:id="@+id/tv_singer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_song_name"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="13dp"
+        android:text="--陈奕迅--"/>
+    <TextView
+        android:id="@+id/tv_album_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_singer_name"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="11dp"
+        android:text="--爱情呼叫转移--"/>
+    <ScrollView
+        android:layout_below="@+id/tv_album_name"
+        android:layout_above="@+id/ll_player_bottom"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/sv_lyric"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_lyric"
+            android:lineSpacingExtra="13dp"
+            android:textSize="16dp"
+            android:textIsSelectable="true"
+            android:gravity="center"
+            android:textColor="@color/color_white"
+            android:text="微信公众号：从来不想"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/ll_player_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/ll_seekbar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_played_time"
+                android:text="00:54"
+                android:textColor="@color/color_weixin_green"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="4"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
+            <SeekBar
+                android:layout_weight="4"
+                android:id="@+id/seekbar_music"
+                android:background="@color/color_transport"
+                android:progress="@color/color_white"
+                android:secondaryProgressTint="@color/color_weixin_background_gray"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_playing_time"
+                android:layout_weight="4"
+                android:textColor="@color/color_weixin_green"
+                android:text="04:54"
+                android:layout_marginRight="5dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv_donate"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:src="@mipmap/hongbao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv_play"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:src="@mipmap/play_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

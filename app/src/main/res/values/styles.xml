@@ -1,0 +1,77 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">@color/color_transport</item>
+        <item name="android:fitsSystemWindows">true</item>
+
+    </style>
+
+    <style name="SearchViewTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_red</item>
+        <item name="colorPrimaryDark">@color/color_red</item>
+        <item name="colorAccent">@color/color_red</item>
+        <item name="actionMenuTextColor">@color/color_white</item>
+        <item name="editTextColor">@color/color_white</item>
+        <item name="android:textColorHint">@color/color_white</item>
+        <item name="android:drawableTint">@color/color_white</item>
+    </style>
+
+    <!--底部的按钮-->
+    <style name="BottomButtonStyle">
+        <item name="android:layout_width">0sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@drawable/bottom_button_selecter</item>
+        <item name="android:drawableTint">@drawable/bottom_button_selecter</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="MainToolBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/color_white</item>
+        <item name="android:drawableTint">@color/color_white</item>
+    </style>
+
+
+    <style name="SearchBarTheme" parent="Base.Widget.AppCompat.SearchView">
+        <item name="searchIcon">@mipmap/search_white</item>
+        <item name="searchHintIcon">@mipmap/search_white</item>
+        <!--<item name="closeIcon">@mipmap/search</item>-->
+
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:drawableTint">@color/color_white</item>
+        <item name="android:titleTextColor">@color/color_white</item>
+        <item name="android:statusBarColor">@color/color_white</item>
+        <item name="android:background">@color/color_red</item>
+        <item name="queryBackground">@color/color_red</item>
+    </style>
+
+    <!--搜索界面的按钮-->
+    <style name="SerarchViewButtonStyle">
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:backgroundTint">@color/color_white</item>
+        <item name="android:layout_marginLeft">1dp</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+
+</resources>

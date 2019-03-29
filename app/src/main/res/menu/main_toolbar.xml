@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/main_toobar_search"
+        android:title="搜索"
+        android:icon="@mipmap/search"
+        android:iconTint="@color/color_white"
+        app:showAsAction="always"></item>
+    <item
+        android:visible="false"
+        android:id="@+id/main_toolbar_backup"
+        android:title="备份"
+        app:showAsAction="never"></item>
+    <item
+        android:visible="false"
+        android:id="@+id/main_toolbar_upload"
+        android:title="上传"
+        app:showAsAction="never"></item>
+    <item
+        android:visible="false"
+        android:id="@+id/main_toolbar_delete"
+        android:title="删除"
+        app:showAsAction="never"></item>
+    <item
+        android:visible="false"
+        android:id="@+id/main_toolbar_more"
+        android:title="全选"
+        app:showAsAction="never"></item>
+
+</menu>

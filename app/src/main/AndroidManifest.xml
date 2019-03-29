@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yize.fakemusic">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/iconsmall"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/iconsmall"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".config.StartupActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".config.SettingActivity"
+            android:theme="@style/MainToolBarTheme" />
+        <activity
+            android:name=".config.ConfigActivity"
+            android:theme="@style/MainToolBarTheme" />
+        <activity android:name=".musicplayer.MusicPlayActivity" />
+        <activity
+            android:name=".search.SearchActivity"
+            android:theme="@style/SearchViewTheme" />
+
+        <service
+            android:name=".download.DownloadService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".download.DownloadActivity"
+            android:theme="@style/MainToolBarTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/MainToolBarTheme">
+
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.yize.fakemusic.filemanager.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_path" />
+        </provider>
+    </application>
+
+</manifest>

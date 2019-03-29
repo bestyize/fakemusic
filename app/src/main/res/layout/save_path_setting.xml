@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_setting_title"
+        android:text="更改保存文件夹"
+        android:textColor="#FFFFFF"
+        android:background="#343434"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="21dp"
+        android:layout_width="match_parent"
+        android:layout_height="54dp" />
+    <EditText
+        android:id="@+id/et_save_path"
+        android:background="#e3e3e3"
+        android:layout_gravity="center"
+        android:hint="Music"
+        android:layout_width="match_parent"
+        android:layout_height="54dp" />
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="54dp">
+        <Button
+            android:background="#ffffff"
+            android:id="@+id/btn_save_path"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/color_red"
+            android:text="确定"
+            android:layout_marginRight="40dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/btn_cancel_path"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dp"
+            android:background="#ffffff"
+            android:text="取消"
+            android:textColor="@color/color_red" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>

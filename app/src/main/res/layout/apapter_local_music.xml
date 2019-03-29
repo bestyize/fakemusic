@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="4dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:background="@color/color_weixin_background_gray"
+    android:backgroundTint="@color/color_white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/ll_music_info"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_song_name"
+                android:layout_gravity="center|left"
+                android:layout_marginLeft="10dp"
+                android:text="十年"
+                android:textColor="@color/color_black"
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/tv_song_detail"
+                android:layout_gravity="center|left"
+                android:layout_marginLeft="10dp"
+                android:text="陈奕迅|明年今日 已下载"
+                android:textSize="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_download_mp3"
+                style="@style/SerarchViewButtonStyle"
+                android:text="MP3"
+                android:textColor="@color/color_weixin_green" />
+
+            <Button
+                android:id="@+id/btn_download_flac"
+                style="@style/SerarchViewButtonStyle"
+                android:text="FLAC"
+                android:textColor="@color/color_gold" />
+
+            <Button
+                android:id="@+id/btn_show_mv"
+                style="@style/SerarchViewButtonStyle"
+                android:text="MV"
+                android:textColor="@color/colorAccent" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_weixin_background_gray"
+    tools:context=".MainActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_red"
+        android:theme="@style/MainToolBarTheme"
+        app:popupTheme="@style/MainToolBarTheme"
+        app:titleTextColor="@color/color_white"></android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_title"
+        android:layout_above="@+id/rg_main_button"></android.support.v7.widget.RecyclerView>
+    <TextView
+        android:id="@+id/tv_no_music_downloaded"
+        android:gravity="center"
+        android:text="本地还没有下载音乐，点击搜索下载哦"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <RadioGroup
+        android:id="@+id/rg_main_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_weixin_bottom_gray"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:visibility="gone"
+            android:id="@+id/rb_main_button_rank"
+            style="@style/BottomButtonStyle"
+            android:drawableTop="@mipmap/ranking"
+            android:text="排行"/>
+        <RadioButton
+            android:id="@+id/rb_main_button_comment"
+            android:drawableTop="@mipmap/files"
+            style="@style/BottomButtonStyle"
+            android:checked="true"
+            android:text="文件"/>
+        <RadioButton
+            android:id="@+id/rb_main_button_search"
+            style="@style/BottomButtonStyle"
+            android:drawableTop="@mipmap/search"
+            android:text="搜索"/>
+        <RadioButton
+            android:id="@+id/rb_main_button_myself"
+            style="@style/BottomButtonStyle"
+            android:drawableTop="@mipmap/myself"
+            android:text="我的"/>
+    </RadioGroup>
+
+</RelativeLayout>

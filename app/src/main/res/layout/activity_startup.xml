@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".config.StartupActivity">
+
+    <ImageView
+        android:id="@+id/image_fake"
+        android:layout_above="@+id/commont"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:src="@mipmap/iconround"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+    <TextView
+        android:id="@+id/commont"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_black"
+        android:layout_marginBottom="20dp"
+        android:text="希音音乐|从来不想\n免费的无损音乐"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+</RelativeLayout>

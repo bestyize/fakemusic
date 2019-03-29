@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF0000</color>
+    <color name="colorPrimaryDark">#ff0000</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="color_yellow">#FFFF00</color>
+    <color name="color_red">#ff0000</color>
+    <color name="color_gold">#FFD700</color>
+    <color name="color_spring_green">#00FF7F</color>
+    <color name="color_green">#00FF00</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_black">#000000</color>
+    <color name="color_weixin_green">#08c161</color>
+    <color name="color_weixin_blue">#2782d7</color>
+    <color name="color_weixin_bottom_gray">#f7f7f7</color>
+    <color name="color_weixin_background_gray">#ededed</color>
+    <color name="color_youtube_black">#282828</color>
+    <color name="color_gray">#888888</color>
+    <color name="color_transport">#00ff0000</color>
+</resources>
+

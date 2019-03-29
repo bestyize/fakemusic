@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".download.DownloadActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_red"
+        android:theme="@style/MainToolBarTheme"
+        app:popupTheme="@style/MainToolBarTheme"
+        app:titleTextColor="@color/color_white"></android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:backgroundTint="@color/color_white"
+        android:layout_height="80dp">
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:layout_margin="5dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/ll_statues"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:text="歌曲名：十年"
+                android:textSize="18dp"
+                android:id="@+id/tv_download_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="演唱者：陈奕迅"
+                android:textSize="12dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tv_download_singer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="作品集：黑白灰"
+                android:textSize="12dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tv_download_album"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_downloaded_status"
+                android:layout_marginLeft="5dp"
+                android:textSize="10dp"
+                android:text="已下载"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_download_lyric"
+            android:gravity="center"
+            android:text="十年"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
+
+
+</LinearLayout>

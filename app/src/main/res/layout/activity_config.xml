@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".config.ConfigActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_red"
+        android:theme="@style/MainToolBarTheme"
+        app:popupTheme="@style/MainToolBarTheme"
+        app:titleTextColor="@color/color_white"></android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/toolbar_title"
+        android:orientation="vertical"
+        android:background="#e3e3e3"
+        android:id="@+id/ll_myself"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="86dp">
+            <ImageView
+                android:id="@+id/image_my_portait"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/weixin_notice"
+                android:layout_width="66dp"
+                android:layout_height="66dp" />
+
+            <TextView
+                android:id="@+id/tv_notice_myself"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:gravity="left"
+                android:text="希音音乐|免费的无损音乐"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_money"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@mipmap/hongbao"
+                android:layout_marginLeft="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="希音网站"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_local_music"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="1dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@mipmap/files"
+                android:layout_marginLeft="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="本地音乐"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="visible"
+            android:layout_marginTop="24dp"
+            android:id="@+id/ll_use_help"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="1dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@mipmap/weixin_notice"
+                android:layout_marginLeft="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="使用教程"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="visible"
+
+
+            android:id="@+id/ll_wechat"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="1dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@mipmap/weixin_logo"
+                android:layout_marginLeft="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="微信公众号：从来不想"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_image"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="1dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@mipmap/ranking"
+                android:layout_marginLeft="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="图片"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_my_setting"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <ImageView
+                android:src="@mipmap/search"
+                android:layout_marginLeft="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="设置"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:layout_above="@+id/tv_support_me"
+            android:layout_marginBottom="10dp"
+            android:text="希音音乐\n大音希声，大象无形"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_support_me"
+            android:gravity="center"
+            android:layout_above="@+id/ll_bottom_buttom"
+            android:layout_marginBottom="20dp"
+            android:text="仅为安全测试所用，如有他用请马上卸载!\n\n长按下载到本地的音乐可以分享！\n\n作者：@初亦泽"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+

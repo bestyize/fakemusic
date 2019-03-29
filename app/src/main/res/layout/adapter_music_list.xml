@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    android:background="@color/color_weixin_background_gray"
+    android:backgroundTint="@color/color_white"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:backgroundTint="@color/color_white"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+
+        <LinearLayout
+            android:id="@+id/ll_song_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:layout_marginLeft="10dp"
+
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/music_name"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="十年"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageview_quality"
+                    android:layout_width="18dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/hq_icon" />
+
+                <TextView
+                    android:id="@+id/singer_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="陈奕迅"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/tv_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text=" | "
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/music_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="黑白灰"
+                    android:textSize="11dp" />
+                <TextView
+                    android:id="@+id/tv_state"
+                    android:text=""
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_mp3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/button_mp3"
+                android:backgroundTint="@color/color_white"
+                android:text="MP3"
+                android:textColor="#31c27c"
+                android:textSize="10dp"
+                android:layout_width="50dp"
+                android:layout_height="36dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_ape"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/button_ape"
+                android:backgroundTint="@color/color_white"
+                android:text="APE"
+                android:textColor="@color/color_weixin_blue"
+                android:textSize="10dp"
+                android:layout_width="50dp"
+                android:layout_height="36dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_flac"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/button_flac"
+                android:text="FLAC"
+                android:textColor="#dfb665"
+                android:textSize="10dp"
+                android:backgroundTint="@color/color_white"
+                android:layout_width="50dp"
+                android:layout_height="36dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_mv"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+
+            android:layout_gravity="center_horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/button_mv"
+                android:text="MV"
+                android:textSize="10dp"
+                android:textColor="@color/color_red"
+                android:backgroundTint="@color/color_white"
+                android:layout_width="match_parent"
+                android:layout_height="36dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
