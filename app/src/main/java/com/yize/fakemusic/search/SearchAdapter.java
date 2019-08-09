@@ -130,11 +130,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             holder.ll_flac.setVisibility(View.GONE);
             holder.imageview_quality.setImageResource(R.mipmap.hq_icon);
         }
-        if(musicInfo.getPay().toString().contains("payplay=1.0")){
-            holder.ll_flac.setVisibility(View.GONE);
-            holder.ll_mp3.setVisibility(View.GONE);
-
-        }
+//        if(musicInfo.getPay().toString().contains("payplay=1.0")){
+//            holder.ll_flac.setVisibility(View.GONE);
+//            holder.ll_mp3.setVisibility(View.GONE);
+//
+//        }
 
 
     }

@@ -46,7 +46,7 @@
         android:layout_marginBottom="10dp"
         android:id="@+id/sv_lyric"
         android:textAlignment="center"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/tv_lyric"
