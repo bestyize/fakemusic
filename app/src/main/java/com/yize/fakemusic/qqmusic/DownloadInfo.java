@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.security.spec.ECField;
 import java.util.List;
 
 /**
@@ -117,6 +118,28 @@ public class DownloadInfo {
         String lmp3DownloadLink=link.replace("C400","M500").replace(".m4a",".mp3");
         String links[]={flacDownloadLink,apeDownloadLink,hmp3DownloadLink,lmp3DownloadLink,link};
         return links;
+
+    }
+
+    protected String[] getMusicDownloadLinkInApiMode(String baseLink){
+        String qualitys[]={"flac","ape","320","192","128"};
+        String downloadLinks[]=new String[5];
+
+        for(int i=0;i<qualitys.length;i++){
+            try {
+                URL url = new URL(baseLink+qualitys[i]);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("GET");
+                conn.setConnectTimeout(4000);
+                conn.setReadTimeout(4000);
+                String downloadLink = conn.getHeaderField("location");
+                downloadLinks[i]=downloadLink;
+                conn.disconnect();
+            }catch (Exception e){
+                Log.i("Error",e.toString());
+            }
+        }
+        return downloadLinks;
 
     }
 

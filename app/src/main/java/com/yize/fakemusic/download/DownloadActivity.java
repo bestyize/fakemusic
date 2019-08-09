@@ -193,7 +193,7 @@ public class DownloadActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void findDownloadLink(MusicInfo musicInfo,SearchListener listener){
-        musicInfo=new SearchTool().getDownloadLinkInQuickMode(musicInfo);
+        musicInfo=new SearchTool().getDownloadUseApi(musicInfo);
         listener.onSuccess(musicInfo);
     }
 

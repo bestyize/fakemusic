@@ -6,6 +6,7 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -99,6 +100,18 @@ public class SearchTool {
             getDownloadLinkInStableMode(musicInfo);
         }
         return musicInfoList;
+    }
+
+
+    public MusicInfo getDownloadUseApi(MusicInfo musicInfo){
+        String apiLink="https://v1.itooi.cn/tencent/url?id="+musicInfo.getSongmid()+"&quality=";
+        String musicDownloadLink[]=downloadInfo.getMusicDownloadLinkInApiMode(apiLink);
+        musicInfo.setFlacDownloadLink(musicDownloadLink[0]);
+        musicInfo.setApeDownloadLink(musicDownloadLink[1]);
+        musicInfo.setHmp3DownloadLink(musicDownloadLink[2]);
+        musicInfo.setLmp3DownloadLink(musicDownloadLink[3]);
+        musicInfo.setDownloadLink(musicDownloadLink[4]);
+        return musicInfo;
     }
 
 

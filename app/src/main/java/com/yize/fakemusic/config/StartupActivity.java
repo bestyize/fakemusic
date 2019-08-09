@@ -56,9 +56,9 @@ public class StartupActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                String response= new DownloadInfo().getWebContent("http://106.14.216.18/alover.config");
+                String response= new DownloadInfo().getWebContent("http://freedraw.xyz/fakemusic/alover.config");
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -98,7 +98,7 @@ public class StartupActivity extends AppCompatActivity {
                     noticeUser("停止使用",suspend,"YES");
                     return;
                 }
-                if(Double.valueOf(serverConfig.getLatested_version())>3.0){
+                if(Double.valueOf(serverConfig.getLatested_version())>3.1){
                     String newVersionLink=serverConfig.getNotice_content_downloadlink();
                     noticeUser("检测到新版本，请下载新版本",newVersionLink,"YES");
                     return;
