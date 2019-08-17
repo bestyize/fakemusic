@@ -246,7 +246,13 @@
 
         <TextView
             android:gravity="center"
-            android:text="希音音乐使用到了Messor所做的接口\n地址:https://messoer.github.io/"
+            android:text="希音音乐使用到了Messor所做的接口\n地址:https://messoer.github.com/"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/color_weixin_blue"
+            android:text="\n如果一直闪退或提示没有资源,请在设置里面切换到紧急模式"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

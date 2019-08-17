@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yize.fakemusic.R;
+import com.yize.fakemusic.config.SharePreferencesManager;
 import com.yize.fakemusic.download.DownloadActivity;
 import com.yize.fakemusic.download.DownloadListAdapter;
 import com.yize.fakemusic.download.DownloadListener;
@@ -117,19 +118,32 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             }
         });
 
-
-        if(musicInfo.getVid().length()<1){
-            holder.ll_mv.setVisibility(View.GONE);
-        }else {
-            holder.ll_mv.setVisibility(View.VISIBLE);
-        }
-        if(musicInfo.getSizeflac()>0){
-            holder.imageview_quality.setImageResource(R.mipmap.sq_icon);
-            holder.ll_flac.setVisibility(View.VISIBLE);
-        }else {
+        String workMode=new SharePreferencesManager().getConfig("work_mode","mode_normal",context);
+        if(workMode.contains("mode_unormal")){
+            if(musicInfo.getVid().length()<1){
+                holder.ll_mv.setVisibility(View.GONE);
+            }else {
+                holder.ll_mv.setVisibility(View.VISIBLE);
+            }
             holder.ll_flac.setVisibility(View.GONE);
             holder.imageview_quality.setImageResource(R.mipmap.hq_icon);
+
+        }else{
+
+            if(musicInfo.getVid().length()<1){
+                holder.ll_mv.setVisibility(View.GONE);
+            }else {
+                holder.ll_mv.setVisibility(View.VISIBLE);
+            }
+            if(musicInfo.getSizeflac()>0){
+                holder.imageview_quality.setImageResource(R.mipmap.sq_icon);
+                holder.ll_flac.setVisibility(View.VISIBLE);
+            }else {
+                holder.ll_flac.setVisibility(View.GONE);
+                holder.imageview_quality.setImageResource(R.mipmap.hq_icon);
+            }
         }
+
 //        if(musicInfo.getPay().toString().contains("payplay=1.0")){
 //            holder.ll_flac.setVisibility(View.GONE);
 //            holder.ll_mp3.setVisibility(View.GONE);

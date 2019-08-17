@@ -114,6 +114,37 @@ public class SearchTool {
         return musicInfo;
     }
 
+    public MusicInfo getDownloadUseLocalApi(MusicInfo musicInfo){
+        String songmid=musicInfo.getSongmid();
+        String data = "{\"req\":{\"module\":\"CDN.SrfCdnDispatchServer\",\"method\":\"GetCdnDispatch\",\"param\":{\"guid\":\"2985825869\",\"calltype\":0,\"userip\":\"\"}},\"req_0\":{\"module\":\"vkey.GetVkeyServer\",\"method\":\"CgiGetVkey\",\"param\":{\"guid\":\"2985825869\",\"songmid\":[\"yize_songmid\"],\"songtype\":[0],\"uin\":\"0\",\"loginflag\":1,\"platform\":\"20\"}},\"comm\":{\"uin\":0,\"format\":\"json\",\"ct\":20,\"cv\":0}}";
+        String request = data.replace("yize_songmid", songmid);
+        String postUrl = "https://u.y.qq.com/cgi-bin/musicu.fcg?data="+URLEncoder.encode(request);
+        try {
+            URL url = new URL(postUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setConnectTimeout(4000);
+            if (conn.getResponseCode() == 200||conn.getResponseCode()==206) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+                StringBuilder response = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
+                }
+                reader.close();
+                conn.disconnect();
+                //String sublink=response.substring(response.indexOf("purl")+7,response.indexOf("qmdlfromtag"));
+                String subLink="http://isure.stream.qqmusic.qq.com/"+response.substring(response.indexOf("purl")+7,response.indexOf("qmdlfromtag"));
+                musicInfo.setDownloadLink(subLink);
+                String lmp3DownloadLink=subLink.replace("/C400","/M500").replace(".m4a?",".mp3?").substring(0,subLink.lastIndexOf("="))+"=8";
+                musicInfo.setLmp3DownloadLink(lmp3DownloadLink);
+            }
+        }catch (Exception e){
+
+        }
+        return musicInfo;
+    }
+
 
     /**
      * 用普通的方法抓取下载链接，这个接口也是我用Fidder抓到的,但只有一个服务器，相对来说搜索速度比稳固的要快

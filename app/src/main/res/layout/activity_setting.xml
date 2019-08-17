@@ -79,6 +79,22 @@
 
         </LinearLayout>
 
+        <Switch
+
+            android:layout_marginTop="20dp"
+            android:textColor="@color/color_weixin_blue"
+            android:id="@+id/switch_mode"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="紧急模式" />
+
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/color_weixin_blue"
+            android:text="\n紧急模式下仅能下载普通品质MP3和最高品质MV\n如果非紧急模式能正常使用，请不要打开紧急模式"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
 
     </LinearLayout>
     <TextView

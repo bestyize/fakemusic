@@ -98,7 +98,7 @@ public class StartupActivity extends AppCompatActivity {
                     noticeUser("停止使用",suspend,"YES");
                     return;
                 }
-                if(Double.valueOf(serverConfig.getLatested_version())>3.2){
+                if(Double.valueOf(serverConfig.getLatested_version())>3.3){
                     String newVersionLink=serverConfig.getNotice_content_downloadlink();
                     noticeUser("检测到新版本，请下载新版本",newVersionLink,"YES");
                     return;

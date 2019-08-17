@@ -9,9 +9,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.yize.fakemusic.config.*;
 
 import com.yize.fakemusic.R;
@@ -21,6 +25,7 @@ import java.io.File;
 public class SettingActivity extends AppCompatActivity {
     private LinearLayout ll_change_folder,ll_change_max_num;
     private Toolbar toolbar_title;
+    private Switch switch_mode;
 
 
     @Override
@@ -50,6 +55,28 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showChangeMaxSearchAlert();
+            }
+        });
+        switch_mode=(Switch)findViewById(R.id.switch_mode);
+        String workMode=new SharePreferencesManager().getConfig("work_mode","mode_normal",getApplicationContext());
+        if(workMode.contains("mode_unormal")){
+            switch_mode.setChecked(true);
+
+        }else{
+            switch_mode.setChecked(false);
+
+        }
+        //Toast.makeText(getApplicationContext(),workMode,Toast.LENGTH_SHORT).show();
+        switch_mode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(switch_mode.isChecked()){
+                    //写sharedPerference
+                    new SharePreferencesManager().addConfig("work_mode","mode_unormal",getApplicationContext());
+                    //Toast.makeText(getApplicationContext(),"写sharedPerference ",Toast.LENGTH_SHORT).show();
+                }else{
+                    new SharePreferencesManager().addConfig("work_mode","mode_normal",getApplicationContext());
+                }
             }
         });
     }

@@ -91,6 +91,15 @@ public class DownloadActivity extends AppCompatActivity implements View.OnClickL
 
                     switch (quality){
                         case "FLAC":
+                            if(musicInfo.getFlacDownloadLink()==null){
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(DownloadActivity.this,"没有对应品质音乐，无法下载,或者到设置里面切换到紧急模式",Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                return;
+                            }
                             String flacDownloadLink=musicInfo.getFlacDownloadLink();
                             String saveFileName=musicInfo.getSaveFileName()+ ".flac";
                             checkProgress(musicInfo,"FLAC");
@@ -98,13 +107,18 @@ public class DownloadActivity extends AppCompatActivity implements View.OnClickL
                             checkProgress(musicInfo,"FLAC");
                             break;
                         case "MP3":
-                            String mp3DownloadLink=musicInfo.getHmp3DownloadLink();
-                            if(musicInfo.getSize320()>0){
+                            String mp3DownloadLink="";
+                            if(musicInfo.getHmp3DownloadLink()!=null&&musicInfo.getSize320()>0){
                                 mp3DownloadLink=musicInfo.getHmp3DownloadLink();
-                            }else if(musicInfo.getSize128()>0){
+                            }else if(musicInfo.getLmp3DownloadLink()!=null&&musicInfo.getSize128()>0){
                                 mp3DownloadLink=musicInfo.getLmp3DownloadLink();
                             }else {
-                                Toast.makeText(DownloadActivity.this,"没有对应品质音乐，无法下载",Toast.LENGTH_SHORT).show();
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(DownloadActivity.this,"没有对应品质音乐，无法下载，或者到设置里面切换到紧急模式",Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                                 return;
                             }
                             String mp3SaveFileName=musicInfo.getSaveFileName()+ ".mp3";
@@ -189,12 +203,17 @@ public class DownloadActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-
-
-
     private void findDownloadLink(MusicInfo musicInfo,SearchListener listener){
-        musicInfo=new SearchTool().getDownloadUseApi(musicInfo);
-        listener.onSuccess(musicInfo);
+        String workMode=new SharePreferencesManager().getConfig("work_mode","mode_normal",getApplicationContext());
+        if(workMode.contains("mode_unormal")){
+            musicInfo=new SearchTool().getDownloadUseApi(musicInfo);
+            listener.onSuccess(musicInfo);
+
+        }else{
+            musicInfo=new SearchTool().getDownloadUseApi(musicInfo);
+            listener.onSuccess(musicInfo);
+
+        }
     }
 
     private void findLyric(final MusicInfo musicInfo,final SearchListener listener){
@@ -221,7 +240,12 @@ public class DownloadActivity extends AppCompatActivity implements View.OnClickL
                 long fileSize=musicInfo.getSizeflac();
                 if(quality.contains("MP3")){
                     saveFileName=saveFileName.replace(".flac",".mp3");
-                    fileSize=musicInfo.getSize320();
+                    if(musicInfo.getHmp3DownloadLink()!=null){
+                        fileSize=musicInfo.getSize320();
+                    }else {
+                        fileSize=musicInfo.getSize128();
+                    }
+
                 }
                 else if (quality.contains("MP4")){
                     saveFileName=saveFileName.replace(".flac","mp4");
